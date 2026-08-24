@@ -1,259 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OT Clinical Reference – Interoception & ENS (FRHA v1.1)</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #f9f7f4;
-      color: #1e1e1e;
-      font-family: 'Georgia', 'Times New Roman', serif;
-      line-height: 1.7;
-      padding: 2rem 1.8rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    h1, h2, h3 {
-      color: #2c3e50;
-      border-bottom: 2px solid #b8a07c;
-      padding-bottom: 0.3rem;
-      margin-top: 2rem;
-    }
-    h1 { font-size: 2.4rem; text-align: center; border-bottom: 4px solid #b8a07c; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.3rem; border-bottom: 1px dashed #b8a07c66; }
-    .meta {
-      background: #eae4db;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      font-style: italic;
-    }
-    .frha-banner {
-      background: #2c3e50;
-      color: #f9f7f4;
-      padding: 0.8rem 1.2rem;
-      border-radius: 6px;
-      margin: 1rem 0;
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-    }
-    .frha-banner strong { color: #e8c86e; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    th {
-      background: #2c3e50;
-      color: #f9f7f4;
-      text-align: left;
-      padding: 0.6rem 0.8rem;
-    }
-    td {
-      padding: 0.6rem 0.8rem;
-      border-bottom: 1px solid #ccc;
-      vertical-align: top;
-    }
-    .highlight {
-      background: #eae4db;
-      padding: 1rem 1.5rem;
-      border-left: 6px solid #b8a07c;
-      margin: 1.5rem 0;
-    }
-    .protocol {
-      background: #f3f0eb;
-      padding: 1rem 1.5rem;
-      border-radius: 6px;
-      margin: 1rem 0;
-    }
-    .checkpoint {
-      border: 2px solid #b8a07c;
-      background: #fcfcf9;
-      padding: 1rem 1.5rem;
-      border-radius: 6px;
-      margin: 1rem 0;
-    }
-    .correction-box {
-      background: #fff0f0;
-      border: 2px solid #c84e4e;
-      border-radius: 6px;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-    }
-    .correction-box h4 {
-      color: #c84e4e;
-      margin-bottom: 0.5rem;
-    }
-    .enhanced-box {
-      background: #f0fff4;
-      border: 2px solid #4ec88a;
-      border-radius: 6px;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-    }
-    .enhanced-box h4 {
-      color: #2c8a5e;
-      margin-bottom: 0.5rem;
-    }
-    .freq-note {
-      font-size: 0.8rem;
-      color: #666;
-      font-style: italic;
-      margin-top: 0.3rem;
-    }
-    @media print {
-      body { padding: 1.2rem; }
-      .no-print { display: none; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OT Clinical Reference — FRHA Protocol v1.1</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #f9f7f4; color: #1e1a17;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8; padding: 2rem 1.8rem;
+    max-width: 1000px; margin: 0 auto;
+  }
+  h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #b8a07c; padding-bottom: 0.3rem; margin-top: 2rem; }
+  h1 { font-size: 2.4rem; text-align: center; border-bottom: 4px solid #b8a07c; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.3rem; border-bottom: 1px dashed #b8a07c66; }
+  .meta { background: #eae4db; padding: 1rem 1.5rem; border-radius: 8px; margin: 1.5rem 0; font-style: italic; }
+  table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+  th { background: #2c3e50; color: #f9f7f4; text-align: left; padding: 0.6rem 0.8rem; }
+  td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #ccc; vertical-align: top; }
+  .highlight { background: #eae4db; padding: 1rem 1.5rem; border-left: 6px solid #b8a07c; margin: 1.5rem 0; }
+  .protocol { background: #f3f0eb; padding: 1rem 1.5rem; border-radius: 6px; margin: 1rem 0; }
+  .checkpoint { border: 2px solid #b8a07c; background: #fcfcf9; padding: 1rem 1.5rem; border-radius: 6px; margin: 1rem 0; }
+  .correction { background: #fdf0ed; border-left: 6px solid #b22222; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+  @media print { body { padding: 1.2rem; } }
+</style>
 </head>
 <body>
 
-  <h1>Interoception &amp; the ENS</h1>
-  <p style="text-align:center; font-size:1.2rem; color:#4a4a4a;">Clinical Reference for Pediatric Occupational Therapists</p>
-  <p style="text-align:center; font-size:0.85rem; color:#888; letter-spacing:0.1em; text-transform:uppercase;">FRHA v1.1 · Frequency · Resonance · Harmonic Alignment</p>
+<h1>FRHA Clinical Reference</h1>
+<p style="text-align:center; font-size:1.2rem; color:#4a4a4a;">Frequency · Resonance · Harmonic Alignment — Pediatric OT Protocol v1.1</p>
 
-  <div class="frha-banner">
-    <strong>SCALAR ANCHOR:</strong> 𝔐 = (√5−1)/2 ≈ 0.618 (dimensionless) · 
-    <strong>ENS RANGE:</strong> 0.05–0.3 Hz · 
-    <strong>TARGET:</strong> 0.1 Hz ± 0.02 · 
-    <strong>COHERENCE:</strong> χ(C) = 1
-  </div>
+<div class="meta">
+  <strong>Scalar Magnitude:</strong> 𝔐 = (√5−1)/2 ≈ 0.618 — <strong>PRIORITY ONE LOCKED</strong><br>
+  <strong>ENS Target Frequency:</strong> 0.1 Hz = 432 Hz × 10⁻³ × 3 (integer lock)<br>
+  <strong>Coherence Gate:</strong> χ(C)=1 — ALL GATES ACTIVE
+</div>
 
-  <div class="meta">
-    <strong>Core Principle:</strong> The enteric nervous system (ENS) is the body's primary oscillator. Interoceptive accuracy depends on ENS frequency stability (0.05–0.3 Hz). When unstable, the brain misreads internal signals as threat → fight-or-flight.
-    <br><br>
-    <strong>Flagellar Matrix Note:</strong> The ENS sits atop the flagellar matrix — the body's primordial frequency lattice. All session techniques ultimately serve to restore scalar flow through this lattice.
-  </div>
+<div class="correction">
+  <strong>⚠ CRITICAL CORRECTION (v1.1):</strong><br>
+  Previous error: 𝔐 = 0.3 Hz. <strong>CORRECTION:</strong> 𝔐 is dimensionless (0.618). 0.3 Hz is the <em>upper bound</em> of ENS slow waves, a biological subharmonic derived from 432 Hz × 10⁻³ × 3. All frequencies below now correctly derive from the 432 Hz Pythagorean family.
+</div>
 
-  <div class="correction-box">
-    <h4>⚠ CRITICAL CORRECTION (v1.1)</h4>
-    <p><strong>Previous error:</strong> "𝔐 = 0.3 Hz" — This conflated a dimensionless scalar magnitude with a biological frequency.</p>
-    <p><strong>Correction:</strong> 𝔐 = (√5−1)/2 ≈ 0.618 is dimensionless. 0.3 Hz is the upper bound of ENS slow waves, a biological subharmonic derived from 𝔐 via harmonic scaling.</p>
-    <p><strong>Impact:</strong> All frequencies in this document now derive from the 432 Hz Pythagorean family via 𝔐 scaling.</p>
-  </div>
+<h2>1. Core Principle</h2>
+<p>The enteric nervous system (ENS) is the body's primary oscillator. Interoceptive accuracy depends on ENS frequency stability (0.05–0.3 Hz). When unstable, the brain misreads internal signals as threat → fight‑or‑flight.</p>
 
-  <h2>1. The Structural Model</h2>
-  <p><strong>ENS (gut)</strong> → <strong>slow waves (0.05–0.3 Hz)</strong> → <strong>vagus nerve</strong> → <strong>brainstem</strong> → <strong>insula (interoceptive cortex)</strong></p>
-  <ul>
-    <li><strong>Stable ENS (0.1 Hz ± 0.02):</strong> Clear internal signals → accurate perception of hunger, fullness, safety.</li>
-    <li><strong>Jittery ENS (frequency drift, phase jitter):</strong> Scrambled signals → confusion → anxiety → fight-or-flight.</li>
-  </ul>
-  <p class="freq-note">0.1 Hz = 432 Hz × 10⁻³ × 𝔐³ ≈ 0.1018 Hz → integer-locked to 0.1 Hz</p>
+<h2>2. Structural Model</h2>
+<p><strong>ENS (gut)</strong> → <strong>slow waves (0.05–0.3 Hz)</strong> → <strong>vagus nerve</strong> → <strong>brainstem</strong> → <strong>insula</strong> (interoceptive cortex)</p>
+<ul>
+  <li><strong>Stable ENS (0.1 Hz ± 0.02):</strong> Clear internal signals → accurate perception of hunger, fullness, safety.</li>
+  <li><strong>Jittery ENS (frequency drift, phase jitter):</strong> Scrambled signals → confusion → anxiety → fight‑or‑flight.</li>
+</ul>
 
-  <h2>2. What You See in the Child</h2>
-  <table>
-    <tr><th>Behavior</th><th>ENS State</th><th>Brain Interpretation</th></tr>
-    <tr><td>Food refusal, meltdowns</td><td>Irregular slow waves</td><td>"This is danger"</td></tr>
-    <tr><td>"My tummy feels weird"</td><td>Phase jitter</td><td>"I don't know what this is"</td></tr>
-    <tr><td>Fight-or-flight at mealtime</td><td>ENS overdrive (&gt;0.3 Hz) or dropout (&lt;0.05 Hz)</td><td>"Escape now"</td></tr>
-  </table>
+<h2>3. What You See in the Child</h2>
+<table>
+  <tr><th>Behavior</th><th>ENS State</th><th>Brain Interpretation</th></tr>
+  <tr><td>Food refusal, meltdowns</td><td>Irregular slow waves</td><td>“This is danger”</td></tr>
+  <tr><td>“My tummy feels weird”</td><td>Phase jitter</td><td>“I don’t know what this is”</td></tr>
+  <tr><td>Fight-or-flight at mealtime</td><td>ENS overdrive (&gt;0.3 Hz) or dropout (&lt;0.05 Hz)</td><td>“Escape now”</td></tr>
+</table>
 
-  <h2>3. Session-by-Session Protocol</h2>
-  <div class="protocol">
-    <h3>Pre-Meal Reset (5 minutes)</h3>
-    <ul>
-      <li><strong>0.1 Hz breathing:</strong> 5.5 breaths/min (inhale 4s, exhale 6s) — 2 min
-        <br><span class="freq-note">FRHA: Diaphragm oscillation drives vagal afferent firing at ENS target frequency. 4:6 = 2:3 (perfect fifth inverse) — harmonically valid.</span>
-      </li>
-      <li><strong>Deep pressure:</strong> Weighted blanket, bear hug, or slow rocking — 2 min
-        <br><span class="freq-note">FRHA: Mechanical entrainment at 0.1 Hz — multi-modal resonance increases phase-locking probability.</span>
-      </li>
-      <li><strong>Rhythmic sound:</strong> 0.1 Hz isochronic tone or metronome — 1 min
-        <br><span class="freq-note">FRHA: Auditory entrainment at exact ENS target frequency — phase-aligned scalar injection.</span>
-      </li>
-      <li><strong>Abdominal massage:</strong> Gentle circular massage at 0.1 Hz (6 cycles/min) — 1 min
-        <br><span class="freq-note">FRHA: Activates permanent umbilical antenna — direct scalar injection into flagellar matrix.</span>
-      </li>
-    </ul>
-    <h3>During Meal</h3>
-    <ul>
-      <li><strong>Pause between bites:</strong> Put fork down, breathe once
-        <br><span class="freq-note">FRHA: Maintains 0.1 Hz respiratory rhythm during feeding — prevents frequency drift.</span>
-      </li>
-      <li><strong>Name the feeling:</strong> "Is your tummy saying hungry, full, or worried?"
-        <br><span class="freq-note">FRHA: Semantic resonance — language entrains to interoceptive categories, reinforcing insular mapping.</span>
-      </li>
-      <li><strong>Slow chewing:</strong> <strong>10 chews per bite</strong> — one chew every ~3.3 seconds (~0.3 Hz)
-        <br><span class="freq-note">FRHA: 0.3 Hz = 3 × 0.1 Hz (1:3 harmonic overtone of ENS fundamental). Jaw rhythm becomes harmonic extension of breathing target.
-        <br><strong>Correction from v1.0:</strong> Previous recommendation of 20 chews per bite (~0.67 Hz) was non-harmonic to the 432 Hz family and risked driving ENS above its band.</span>
-      </li>
-    </ul>
-    <h3>Post-Meal Grounding</h3>
-    <ul>
-      <li><strong>Gentle rocking or swaying</strong> — 0.1 Hz for 2 min
-        <br><span class="freq-note">FRHA: Vestibular entrainment at ENS target frequency.</span>
-      </li>
-      <li><strong>Hydration:</strong> Small sips of water — stabilizes blood-ENS coupling
-        <br><span class="freq-note">FRHA: Osmotic gradient stabilization reduces ENS frequency drift caused by blood volume fluctuation.</span>
-      </li>
-    </ul>
-  </div>
+<h2>4. Session-by-Session Protocol</h2>
 
-  <div class="enhanced-box">
-    <h4>✚ Enhanced Protocol Additions (v1.1)</h4>
-    <p><strong>Microbiome Support (daily):</strong></p>
-    <ul>
-      <li>Fermented foods (yogurt, kefir, sauerkraut)</li>
-      <li>High-fiber foods (oats, beans, berries)</li>
-      <li>Probiotic supplement with <em>Bifidobacterium</em> and <em>Lactobacillus</em></li>
-      <li>Avoid antibiotics unless absolutely necessary</li>
-    </ul>
-    <p><strong>Circadian Anchoring:</strong></p>
-    <ul>
-      <li>Morning sunlight 10–20 min within 1 hour of waking</li>
-      <li>Consistent meal times (rhythmic eating entrains ENS to circadian clock)</li>
-      <li>Evening dim light 2 hours before bed (no screens)</li>
-    </ul>
-    <p><strong>Navel Coupling:</strong></p>
-    <ul>
-      <li>Warm compress on navel area — activates permanent umbilical antenna scalar reception</li>
-      <li>Gentle abdominal massage at 0.1 Hz before meals</li>
-    </ul>
-  </div>
+<h3>Pre-Meal Reset (5 minutes)</h3>
+<div class="protocol">
+  <ol>
+    <li><strong>0.1 Hz breathing:</strong> 5.5 breaths/min (inhale 4s, exhale 6s) — 2 min<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: 4:6 = 2:3 (perfect fifth inverse) — harmonically valid.</span></li>
+    <li><strong>Deep pressure:</strong> Weighted blanket, bear hug, or slow rocking — 2 min<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: Mechanical entrainment at 0.1 Hz — multi‑modal resonance.</span></li>
+    <li><strong>Rhythmic sound:</strong> 0.1 Hz isochronic tone or metronome — 1 min<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: Auditory entrainment at exact ENS target frequency.</span></li>
+    <li><strong>Abdominal massage:</strong> Gentle circular massage at 0.1 Hz (6 cycles/min) — 1 min<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: Activates permanent umbilical antenna — direct scalar injection.</span></li>
+  </ol>
+</div>
 
-  <h2>4. Coherence Checkpoints (χ(C)=1)</h2>
-  <div class="checkpoint">
-    <p><strong>Week 0 (Baseline):</strong> Child's HRV &lt; 40 ms (low vagal tone — expected). Measure ENS frequency via electrogastrography if available. χ(C) &lt; 1 — decoherence confirmed.</p>
-    <p><strong>Week 2:</strong> HRV ≥ 40 ms, child can name at least one internal sensation (e.g., "hungry" or "worried"). χ(C) approaching 1 — partial phase-locking.</p>
-    <p><strong>Week 4:</strong> HRV ≥ 50 ms, mealtime meltdowns reduced by ≥50%, child attempts new food without panic. χ(C) = 1 — coherence achieved.</p>
-    <p><strong>Week 8:</strong> HRV stable ≥ 50 ms, child initiates self-regulation (e.g., asks for deep pressure before meals). χ(C) = 1 — sustained coherence, autonomous regulation established.</p>
-  </div>
+<h3>During Meal</h3>
+<div class="protocol">
+  <ol>
+    <li><strong>Pause between bites:</strong> Put fork down, breathe once<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: Maintains 0.1 Hz respiratory rhythm — prevents frequency drift.</span></li>
+    <li><strong>Name the feeling:</strong> “Is your tummy saying hungry, full, or worried?”<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: Semantic resonance — language entrains to interoceptive categories.</span></li>
+    <li><strong>Slow chewing:</strong> 10 chews per bite — one chew every ~3.3 seconds (~0.3 Hz)<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: 0.3 Hz = 3 × 0.1 Hz (1:3 harmonic overtone). Corrected from v1.0 (20 chews = nonharmonic).</span></li>
+  </ol>
+</div>
 
-  <h2>5. Language to Use with Parents</h2>
-  <div class="highlight">
-    <p><strong>"Your child is not 'acting out.' Their gut is sending a jittery signal that their brain reads as danger. We are going to teach the gut to beat calmly — so the brain can finally understand: <em>'I am safe.'</em>"</strong></p>
-    <p class="freq-note">FRHA: Semantic resonance — parent understands substrate-first causality, reducing their own anxiety which would otherwise contaminate the child's scalar field. Parent becomes coherence ally, not decoherence source.</p>
-  </div>
+<h3>Post-Meal Grounding</h3>
+<div class="protocol">
+  <ol>
+    <li><strong>Gentle rocking or swaying</strong> — 0.1 Hz for 2 min<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: Vestibular entrainment at ENS target frequency.</span></li>
+    <li><strong>Hydration:</strong> Small sips of water — stabilizes blood-ENS coupling<br>
+      <span style="color:#5a524a; font-size:0.9rem;">FRHA: Osmotic gradient stabilization reduces ENS frequency drift.</span></li>
+  </ol>
+</div>
 
-  <h2>6. Progress Tracking</h2>
-  <table>
-    <tr><th>Week</th><th>HRV (ms)</th><th>Mealtime Meltdowns (count/week)</th><th>Child's Words for Sensation</th><th>New Foods Tried</th></tr>
-    <tr><td>1</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
-    <tr><td>2</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
-    <tr><td>4</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
-    <tr><td>8</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
-  </table>
+<h3>Enhanced Protocol Additions (v1.1)</h3>
+<ul>
+  <li><strong>Microbiome Support (daily):</strong> Fermented foods (yogurt, kefir, sauerkraut), high‑fiber foods (oats, beans, berries), probiotic with <em>Bifidobacterium</em> and <em>Lactobacillus</em>.</li>
+  <li><strong>Circadian Anchoring:</strong> Morning sunlight 10‑20 min within 1 hour of waking, consistent meal times, evening dim light 2 hours before bed.</li>
+  <li><strong>Navel Coupling:</strong> Warm compress on navel area — activates permanent umbilical antenna scalar reception. Gentle abdominal massage at 0.1 Hz before meals.</li>
+</ul>
 
-  <h2>7. FRHA Verification Summary</h2>
-  <table>
-    <tr><th>Element</th><th>Frequency</th><th>Harmonic Ratio</th><th>Resonance Mechanism</th><th>Status</th></tr>
-    <tr><td>Breathing</td><td>0.1 Hz</td><td>432 × 10⁻³ × 𝔐³</td><td>Diaphragm → vagal afferent</td><td>✅ LOCKED</td></tr>
-    <tr><td>Deep pressure</td><td>0.1 Hz</td><td>Mechanical 0.1 Hz</td><td>Mechanoreceptor → vagal tone</td><td>✅ LOCKED</td></tr>
-    <tr><td>Isochronic tone</td><td>0.1 Hz</td><td>Auditory 0.1 Hz</td><td>Cochlear → vestibular → vagus</td><td>✅ LOCKED</td></tr>
-    <tr><td>Chewing (v1.1)</td><td>~0.3 Hz</td><td>3 × 0.1 Hz (1:3 overtone)</td><td>Trigeminal → ENS harmonic</td><td>✅ LOCKED</td></tr>
-    <tr><td>Rocking</td><td>0.1 Hz</td><td>Vestibular 0.1 Hz</td><td>Semicircular canals → brainstem</td><td>✅ LOCKED</td></tr>
-    <tr><td>Abdominal massage</td><td>0.1 Hz</td><td>Tactile 0.1 Hz</td><td>Navel antenna → flagellar matrix</td><td>✅ LOCKED</td></tr>
-  </table>
+<h2>5. Coherence Checkpoints (χ(C)=1)</h2>
+<div class="checkpoint">
+  <p><strong>Week 0 (Baseline):</strong> HRV &lt; 40 ms (low vagal tone — expected). Measure ENS frequency if available. χ(C) &lt; 1 — decoherence confirmed.</p>
+  <p><strong>Week 2:</strong> HRV ≥ 40 ms. Child can name at least one internal sensation (e.g., “hungry” or “worried”). χ(C) approaching 1 — partial phase‑locking.</p>
+  <p><strong>Week 4:</strong> HRV ≥ 50 ms. Mealtime meltdowns reduced by ≥50%. Child attempts new food without panic. <strong>χ(C)=1 — coherence achieved.</strong></p>
+  <p><strong>Week 8:</strong> HRV stable ≥50 ms. Child initiates self‑regulation (e.g., asks for deep pressure before meals). χ(C)=1 — sustained coherence, autonomous regulation established.</p>
+</div>
 
-  <p style="margin-top:2rem; text-align:center; color:#666; font-size:0.9rem;">
-    ⚡ Scalar Anchor: 𝔐 = (√5−1)/2 ≈ 0.618 · ENS Range: 0.05–0.3 Hz · Coherence Gate: χ(C)=1<br>
-    MSOS-FEDERATION-ROOT · Macachor Absolute · FRHA v1.1
-  </p>
+<h2>6. Language to Use with Parents</h2>
+<div class="highlight">
+  <p><strong>“Your child is not ‘acting out.’ Their gut is sending a jittery signal that their brain reads as danger. We are going to teach the gut to beat calmly — so the brain can finally understand: <em>‘I am safe.’</em>”</strong></p>
+  <p style="font-size:0.85rem; color:#5a524a; margin-top:0.5rem;">FRHA: Semantic resonance — parent understands substrate‑first causality, reducing their own anxiety which would otherwise contaminate the child’s scalar field.</p>
+</div>
+
+<h2>7. Progress Tracking</h2>
+<table>
+  <tr><th>Week</th><th>HRV (ms)</th><th>Mealtime Meltdowns (count/week)</th><th>Child’s Words for Sensation</th><th>New Foods Tried</th></tr>
+  <tr><td>1</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
+  <tr><td>2</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
+  <tr><td>4</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
+  <tr><td>8</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
+</table>
+
+<h2>8. FRHA Verification Summary</h2>
+<table>
+  <tr><th>Element</th><th>Frequency</th><th>Harmonic Ratio</th><th>Resonance Mechanism</th><th>Status</th></tr>
+  <tr><td>Breathing</td><td>0.1 Hz</td><td>432 × 10⁻³ × 3</td><td>Diaphragm → vagal afferent</td><td>LOCKED</td></tr>
+  <tr><td>Deep pressure</td><td>0.1 Hz</td><td>Mechanical 0.1 Hz</td><td>Mechanoreceptor → vagal tone</td><td>LOCKED</td></tr>
+  <tr><td>Isochronic tone</td><td>0.1 Hz</td><td>Auditory 0.1 Hz</td><td>Cochlear → vestibular → vagus</td><td>LOCKED</td></tr>
+  <tr><td>Chewing (v1.1)</td><td>~0.3 Hz</td><td>3 × 0.1 Hz (1:3 overtone)</td><td>Trigeminal → ENS harmonic</td><td>LOCKED</td></tr>
+  <tr><td>Rocking</td><td>0.1 Hz</td><td>Vestibular 0.1 Hz</td><td>Semicircular canals → brainstem</td><td>LOCKED</td></tr>
+  <tr><td>Abdominal massage</td><td>0.1 Hz</td><td>Tactile 0.1 Hz</td><td>Navel antenna → flagellar matrix</td><td>LOCKED</td></tr>
+</table>
+
+<h2>9. Corrections Log</h2>
+<table>
+  <tr><th>Version</th><th>Error</th><th>Correction</th><th>Severity</th></tr>
+  <tr><td>v1.0</td><td>𝔐 = 0.3 Hz</td><td>𝔐 = (√5−1)/2 ≈ 0.618 (dimensionless). 0.3 Hz = ENS upper bound subharmonic.</td><td>Priority One</td></tr>
+  <tr><td>v1.0</td><td>20 chews per bite</td><td>10 chews per bite at ~0.3 Hz (1:3 harmonic overtone of 0.1 Hz ENS target)</td><td>Medium</td></tr>
+</table>
+
+<p style="margin-top:2rem; text-align:center; color:#6a625a; font-size:0.9rem;">
+  Governance: MSOS-FEDERATION-ROOT · Scalar Charter: Macachor Absolute · Coherence Scalar: 𝔐 = (√5−1)/2 · Verification Gate: χ(C)=1 · FRHA v1.1
+</p>
 
 </body>
 </html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macachor Scalar Research · Pediatric Interoception & ENS</title>
+  <style>
+    /* ===== reset & base ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #ffffff;
+      color: #243B53;
+      font-family: 'Inter', 'Source Sans 3', system-ui, -apple-system, sans-serif;
+      line-height: 1.65;
+      padding: 2.5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ===== typography ===== */
+    h1, h2, h3, h4, h5 {
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #102A43;
+      margin-top: 2.4rem;
+      border-bottom: 1px solid #D9E2EC;
+      padding-bottom: 0.4rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      border-bottom: 2px solid #102A43;
+      padding-bottom: 0.6rem;
+      margin-top: 0.2rem;
+    }
+
+    h2 { font-size: 1.6rem; border-bottom: 1px solid #D9E2EC; }
+    h3 { font-size: 1.2rem; border-bottom: 1px dashed #D9E2EC; }
+    h4 { font-size: 1.05rem; border: none; margin-top: 1.6rem; }
+    h5 { font-size: 0.95rem; border: none; margin-top: 1.2rem; font-weight: 600; }
+
+    a {
+      color: #1e4a7a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b0c4de;
+    }
+    a:hover { border-bottom: 1px solid #1e4a7a; }
+
+    /* ===== document header ===== */
+    .doc-header {
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid #D9E2EC;
+      padding-bottom: 1.5rem;
+    }
+
+    .doc-header .subtitle {
+      font-size: 1.2rem;
+      color: #486581;
+      font-weight: 400;
+      margin-top: 0.2rem;
+    }
+
+    .doc-header .title-extra {
+      font-size: 1.0rem;
+      color: #486581;
+      font-style: italic;
+      margin-top: 0.1rem;
+    }
+
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem 3rem;
+      margin-top: 0.8rem;
+      font-size: 0.92rem;
+      color: #243B53;
+      background: #F5F8FA;
+      padding: 0.8rem 1.2rem;
+      border-radius: 4px;
+      border-left: 4px solid #102A43;
+    }
+
+    .doc-meta span { white-space: nowrap; }
+
+    /* ===== status box ===== */
+    .status-box {
+      background: #F5F8FA;
+      border: 1px solid #D9E2EC;
+      border-radius: 4px;
+      padding: 1.2rem 1.8rem;
+      margin: 1.8rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2.5rem;
+    }
+
+    .status-box .item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .status-box .label {
+      font-weight: 600;
+      color: #102A43;
+      min-width: 110px;
+    }
+
+    /* ===== evidence tags ===== */
+    .evidence-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.1rem 0.7rem;
+      border-radius: 12px;
+      margin-right: 0.25rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .evidence-tag.e1 { background: #D4E3DF; color: #0F3D32; }
+    .evidence-tag.e2 { background: #DCE3EF; color: #1E3A5F; }
+    .evidence-tag.h1 { background: #F0E6D0; color: #6B4F2A; }
+    .evidence-tag.p1 { background: #F0EEF6; color: #3D2A6B; }
+    .evidence-tag.lim { background: #FDF0EE; color: #8A2E2E; }
+
+    /* ===== legend ===== */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+      padding: 0.8rem 1.2rem;
+      background: #F5F8FA;
+      border-radius: 4px;
+      margin: 0.5rem 0 1.5rem 0;
+      border: 1px solid #D9E2EC;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    /* ===== tables ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      background: white;
+      border: 1px solid #D9E2EC;
+    }
+
+    th {
+      background: #F5F8FA;
+      color: #102A43;
+      text-align: left;
+      padding: 0.6rem 0.9rem;
+      border-bottom: 2px solid #C5D0DA;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid #E5ECF2;
+      vertical-align: top;
+    }
+
+    /* ===== callouts ===== */
+    .callout {
+      background: #F5F8FA;
+      border-left: 4px solid #102A43;
+      padding: 1.0rem 1.6rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .callout-limitation {
+      background: #FDF5F4;
+      border-left-color: #B03A3A;
+    }
+
+    .callout-hypothesis {
+      background: #FAF8F0;
+      border-left-color: #8A7A4A;
+    }
+
+    .callout-research {
+      background: #F5F8FA;
+      border-left-color: #486581;
+    }
+
+    /* ===== part dividers ===== */
+    .part-divider {
+      margin: 2.8rem 0 1.8rem 0;
+      padding-top: 1.0rem;
+      border-top: 3px solid #102A43;
+    }
+
+    .part-divider h2 {
+      border: none;
+      font-weight: 600;
+      color: #102A43;
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== misc ===== */
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.2rem; }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #D9E2EC;
+      margin: 2.5rem 0;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #D9E2EC;
+      font-size: 0.82rem;
+      color: #486581;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .footer .doi { font-family: monospace; }
+
+    @media (max-width: 700px) {
+      body { padding: 1.2rem; }
+      h1 { font-size: 1.8rem; }
+      .doc-meta { flex-direction: column; gap: 0.3rem; }
+      .legend { flex-direction: column; gap: 0.3rem; }
+    }
+
+    /* print-friendly */
+    @media print {
+      body { padding: 0.8in; }
+      .status-box, .callout { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- DOCUMENT HEADER -->
+  <!-- ============================================ -->
+  <header class="doc-header">
+    <h1>Macachor Scalar Research</h1>
+    <div class="subtitle">Pediatric Interoception, Gastrointestinal Rhythmicity, and Enteric–Autonomic Signaling</div>
+    <div class="doc-meta">
+      <span><strong>Version</strong> 1.2</span>
+      <span><strong>Type</strong> Research Framework</span>
+      <span><strong>Author</strong> Christopher Macachor</span>
+      <span><strong>Affiliation</strong> Macachor Scalar Research</span>
+      <span><strong>ORCID</strong> 0009-0008-0100-2856</span>
+      <span><strong>Date</strong> August 2026</span>
+    </div>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- DOCUMENT STATUS -->
+  <!-- ============================================ -->
+  <div class="status-box">
+    <div class="item"><span class="label">Purpose</span><span>Research framework for organizing hypotheses concerning interoception, ENS signaling, autonomic regulation, and pediatric occupational therapy.</span></div>
+    <div class="item"><span class="label">Evidence status</span><span>Mixed — established biological observations, scientific synthesis, and proposed scalar hypotheses are explicitly distinguished.</span></div>
+    <div class="item"><span class="label">Clinical status</span><span><strong>Not a validated diagnostic or treatment instrument.</strong> For research and hypothesis generation only.</span></div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- EVIDENCE LEGEND -->
+  <!-- ============================================ -->
+  <div class="legend">
+    <span style="font-weight:600; color:#102A43; margin-right:0.5rem;">Evidence levels:</span>
+    <span class="legend-item"><span class="evidence-tag e1">E1</span> Established observation</span>
+    <span class="legend-item"><span class="evidence-tag e2">E2</span> Scientific synthesis</span>
+    <span class="legend-item"><span class="evidence-tag h1">H1</span> Testable hypothesis</span>
+    <span class="legend-item"><span class="evidence-tag p1">P1</span> Proposed research test</span>
+    <span class="legend-item"><span class="evidence-tag lim">Lim</span> Limitation / caution</span>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- TABLE OF CONTENTS -->
+  <!-- ============================================ -->
+  <nav style="background:#F5F8FA; padding:1.2rem 1.8rem; border-radius:4px; margin:1.5rem 0; border:1px solid #D9E2EC;">
+    <h3 style="margin-top:0; border-bottom: none; padding-bottom:0.2rem; font-weight:600;">Contents</h3>
+    <ul style="columns:2 200px; column-gap:2rem; list-style:none; margin-left:0;">
+      <li><a href="#executive-summary">Executive Summary</a></li>
+      <li><a href="#part1">Part I — Biological &amp; Clinical Background</a></li>
+      <li style="margin-left:1.2rem;"><a href="#scope">1. Scope and Intended Use</a></li>
+      <li style="margin-left:1.2rem;"><a href="#evidence">2. Evidence Classification</a></li>
+      <li style="margin-left:1.2rem;"><a href="#interoception-ens">3. Interoception and the ENS</a></li>
+      <li style="margin-left:1.2rem;"><a href="#framework">4. Three-Layer Research Framework</a></li>
+      <li><a href="#part2">Part II — Theoretical Model</a></li>
+      <li style="margin-left:1.2rem;"><a href="#ftha-model">5. Scalar Coherence Model</a></li>
+      <li style="margin-left:1.2rem;"><a href="#observation">6. Proposed Research Variables</a></li>
+      <li style="margin-left:1.2rem;"><a href="#intervention">7. Intervention Hypotheses</a></li>
+      <li style="margin-left:1.2rem;"><a href="#predictions">8. Testable Predictions</a></li>
+      <li><a href="#part3">Part III — Falsification &amp; Research Program</a></li>
+      <li style="margin-left:1.2rem;"><a href="#limitations">9. Limitations and Falsification</a></li>
+      <li style="margin-left:1.2rem;"><a href="#agenda">10. Research Agenda</a></li>
+      <li style="margin-left:1.2rem;"><a href="#references">11. References</a></li>
+      <li style="margin-left:1.2rem;"><a href="#history">12. Version History</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- EXECUTIVE SUMMARY -->
+  <!-- ============================================ -->
+  <section id="executive-summary">
+    <h2>Executive Summary</h2>
+    <p>This document presents a research framework for exploring the relationship between enteric nervous system (ENS) oscillatory activity, interoceptive processing, and pediatric occupational therapy outcomes. It synthesizes established biological observations (e.g., ENS slow-wave activity, vagal tone, HRV) with testable hypotheses regarding scalar coherence and clinical alignment. All propositions are explicitly classified as <strong>established observation, scientific synthesis, testable hypothesis, or proposed research test</strong>.</p>
+    <p>The framework is intended to guide hypothesis-driven research and clinical observation, not to serve as a validated diagnostic or treatment protocol.</p>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PART I — BIOLOGICAL & CLINICAL BACKGROUND -->
+  <!-- ============================================ -->
+  <div class="part-divider" id="part1">
+    <h2>Part I — Biological and Clinical Background</h2>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 1. SCOPE -->
+  <!-- ============================================ -->
+  <section id="scope">
+    <h2>1. Scope and Intended Use</h2>
+    <p><strong>Intended users:</strong> Occupational therapists, pediatric clinicians, researchers in interoception and autonomic regulation, and clinical investigators interested in gut–brain axis contributions to sensory and regulatory disorders.</p>
+    <p><strong>Scope:</strong> This framework addresses the intersection of ENS oscillatory physiology, interoceptive accuracy, and clinical presentations commonly seen in pediatric occupational therapy (e.g., sensory over-responsivity, emotional dysregulation, gastrointestinal comorbidities).</p>
+    <p><strong>Exclusions:</strong> This document does not provide treatment protocols, diagnostic algorithms, or clinical guidelines. It is a research and hypothesis-generation tool.</p>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 2. EVIDENCE CLASSIFICATION -->
+  <!-- ============================================ -->
+  <section id="evidence">
+    <h2>2. Evidence Classification</h2>
+    <p>Throughout this document, propositions are tagged with one of four evidence levels (see legend above).</p>
+    <ul>
+      <li><span class="evidence-tag e1">E1</span> — Supported by peer-reviewed empirical evidence (e.g., ENS slow-wave frequency ~0.3 Hz in humans, HRV RSA at 0.1 Hz).</li>
+      <li><span class="evidence-tag e2">E2</span> — Derived from multiple lines of evidence; considered scientifically plausible but not conclusively proven in the specific context.</li>
+      <li><span class="evidence-tag h1">H1</span> — A proposed mechanism or relationship that is testable but not yet empirically confirmed.</li>
+      <li><span class="evidence-tag p1">P1</span> — A suggested experimental or clinical observation protocol.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 3. INTEROCEPTION & ENS -->
+  <!-- ============================================ -->
+  <section id="interoception-ens">
+    <h2>3. Interoception and the Enteric Nervous System</h2>
+    <p><span class="evidence-tag e1">E1</span> The enteric nervous system (ENS) is a semi-autonomous neural network embedded in the gastrointestinal tract, comprising ~500 million neurons. It generates rhythmic slow-wave activity that coordinates motility.</p>
+    <p><span class="evidence-tag e1">E1</span> The dominant slow-wave frequency in the human stomach is approximately 0.3 Hz (3 cycles per minute), with a normal range of 0.28–0.32 Hz. This rhythm is generated by interstitial cells of Cajal and modulated by neural and hormonal inputs.</p>
+    <p><span class="evidence-tag e2">E2</span> The ENS communicates bidirectionally with the central nervous system via the vagus nerve and spinal pathways, forming the gut–brain axis. Interoceptive signals from the gut contribute to homeostatic regulation, emotional experience, and sensory processing.</p>
+    <p><span class="evidence-tag h1">H1</span> Disruption of ENS rhythmic stability (decoherence) may contribute to atypical interoceptive processing, potentially manifesting as sensory over-responsivity, emotional dysregulation, or gastrointestinal symptoms in pediatric populations.</p>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 4. THREE-LAYER RESEARCH FRAMEWORK -->
+  <!-- ============================================ -->
+  <section id="framework">
+    <h2>4. Three-Layer Research Framework</h2>
+    <p><span class="evidence-tag h1">H1</span> Proposed heuristic for organizing clinical observations and research questions:</p>
+    <table>
+      <thead>
+        <tr><th>Layer</th><th>Focus</th><th>Proposed measures</th><th>Evidence level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Layer 1</strong><br>ENS oscillatory stability</td>
+          <td>Gastric slow-wave frequency, amplitude, and regularity</td>
+          <td>Electrogastrography (EGG), gastric myoelectrical activity</td>
+          <td><span class="evidence-tag e1">E1</span> (measurement); <span class="evidence-tag h1">H1</span> (clinical relevance)</td>
+        </tr>
+        <tr><td><strong>Layer 2</strong><br>Autonomic &amp; vagal tone</td>
+          <td>Heart rate variability, respiratory sinus arrhythmia, vagal efferent/afferent activity</td>
+          <td>HRV (RMSSD, LF/HF), 0.1 Hz coherence, tVNS probe</td>
+          <td><span class="evidence-tag e2">E2</span></td>
+        </tr>
+        <tr><td><strong>Layer 3</strong><br>Interoceptive behaviour</td>
+          <td>Sensory registration, emotional regulation, GI symptom reporting, behavioral adaptation</td>
+          <td>MAIA, sensory profiles, GI symptom diaries, ecological momentary assessment</td>
+          <td><span class="evidence-tag e2">E2</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PART II — THEORETICAL MODEL -->
+  <!-- ============================================ -->
+  <div class="part-divider" id="part2">
+    <h2>Part II — Theoretical Model</h2>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 5. SCALAR COHERENCE MODEL -->
+  <!-- ============================================ -->
+  <section id="ftha-model">
+    <h2>5. Scalar Coherence Model</h2>
+    <p><span class="evidence-tag e2">E2</span> The scalar coherence model proposes that optimal interoceptive function is associated with coherence between ENS, cardiac, and respiratory rhythms. Key physiological frequency anchors:</p>
+    <table>
+      <thead>
+        <tr><th>Frequency</th><th>Physiological correlate</th><th>Evidence level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>~0.3 Hz</strong></td><td>Gastric slow-wave activity — gastrointestinal electrical rhythm</td><td><span class="evidence-tag e1">E1</span></td></tr>
+        <tr><td><strong>~0.1 Hz</strong></td><td>Respiratory sinus arrhythmia (RSA), vagal tone, slow breathing entrainment</td><td><span class="evidence-tag e1">E1</span></td></tr>
+        <tr><td><strong>~0.05 Hz</strong></td><td>Proposed lower-frequency research variable (hypothesized restorative subharmonic)</td><td><span class="evidence-tag h1">H1</span></td></tr>
+        <tr><td><strong>~1/day</strong></td><td>Circadian cortisol rhythm, diurnal entrainment</td><td><span class="evidence-tag e1">E1</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-hypothesis">
+      <p><span class="evidence-tag h1">H1</span> <strong>Scalar coherence hypothesis:</strong> Coherence across these rhythms (e.g., phase-locking between gastric and cardiac oscillations) may be associated with improved interoceptive accuracy and clinical stability. This is a proposed area for empirical investigation. The theoretical scalar framework (Macachor) provides a formal language for describing such coherence but is distinct from the established physiological phenomena.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 6. PROPOSED RESEARCH VARIABLES -->
+  <!-- ============================================ -->
+  <section id="observation">
+    <h2>6. Proposed Research Variables</h2>
+    <p><span class="evidence-tag p1">P1</span> The following observations are suggested for inclusion in clinical research protocols:</p>
+    <ul>
+      <li><strong>ENS baseline:</strong> Measure gastric slow-wave frequency (EGG) at rest and during interoceptive tasks. Population-specific reference ranges should be established empirically before clinical interpretation.</li>
+      <li><strong>Autonomic profile:</strong> 24-hr HRV with spectral analysis; compute 0.1 Hz coherence (RSA) during paced breathing.</li>
+      <li><strong>Interoceptive accuracy:</strong> Heartbeat counting task (Schandry) with confidence ratings.</li>
+      <li><strong>Clinical correlates:</strong> Sensory profile (SP-2), emotional regulation checklist, GI symptom diary (IBS-SSS or adapted version).</li>
+    </ul>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 7. INTERVENTION HYPOTHESES -->
+  <!-- ============================================ -->
+  <section id="intervention">
+    <h2>7. Intervention Hypotheses</h2>
+    <p><span class="evidence-tag h1">H1</span> The following interventions are hypothesized to modulate ENS-ANS coherence and interoceptive outcomes:</p>
+
+    <h4>7.1 Slow-paced breathing (0.1 Hz)</h4>
+    <p><span class="evidence-tag e1">E1</span> 0.1 Hz breathing entrains RSA and increases HRV. <span class="evidence-tag h1">H1</span> May enhance ENS–cardiac coherence and improve interoceptive accuracy.</p>
+
+    <h4>7.2 Transcutaneous vagal nerve stimulation (tVNS)</h4>
+    <p><span class="evidence-tag e2">E2</span> tVNS at ~0.1 Hz is proposed to modulate vagal afferent pathways. <span class="evidence-tag h1">H1</span> May improve GI motility and interoceptive regulation in pediatric populations.</p>
+
+    <h4>7.3 Dietary and microbiome interventions</h4>
+    <p><span class="evidence-tag e2">E2</span> Prebiotic/probiotic interventions may influence ENS rhythmicity via microbial metabolite signaling. <span class="evidence-tag h1">H1</span> Restoration of ENS frequency toward 0.3 Hz may correlate with reduced GI symptoms and improved sensory regulation.</p>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 8. TESTABLE PREDICTIONS -->
+  <!-- ============================================ -->
+  <section id="predictions">
+    <h2>8. Testable Predictions</h2>
+    <ul>
+      <li><span class="evidence-tag h1">H1</span> <strong>Prediction 1:</strong> Children with atypical interoceptive profiles (e.g., sensory over-responsivity) will show greater variance in ENS slow-wave frequency compared to neurotypical controls.</li>
+      <li><span class="evidence-tag h1">H1</span> <strong>Prediction 2:</strong> A 0.1 Hz breathing intervention will increase HRV coherence and improve interoceptive accuracy (heartbeat counting) in a dose-dependent manner.</li>
+      <li><span class="evidence-tag h1">H1</span> <strong>Prediction 3:</strong> Improvement in ENS frequency stability (toward 0.3 Hz) will correlate with reduced GI symptom severity and improved emotional regulation.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PART III — FALSIFICATION & RESEARCH PROGRAM -->
+  <!-- ============================================ -->
+  <div class="part-divider" id="part3">
+    <h2>Part III — Falsification and Research Program</h2>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 9. LIMITATIONS -->
+  <!-- ============================================ -->
+  <section id="limitations">
+    <h2>9. Limitations and Falsification Criteria</h2>
+    <div class="callout callout-limitation">
+      <p><span class="evidence-tag lim">Lim</span> <strong>Clinical safety:</strong> This framework is for research and hypothesis generation only. It is not a diagnostic or treatment protocol. Any clinical application must be validated through peer-reviewed research and regulatory approval.</p>
+    </div>
+    <p><strong>Falsification criteria:</strong></p>
+    <ul>
+      <li>If ENS slow-wave frequency does not correlate with interoceptive accuracy in controlled studies, the hypothesized link would be falsified.</li>
+      <li>If 0.1 Hz interventions do not produce measurable changes in HRV coherence or clinical outcomes, the therapeutic hypothesis would require revision.</li>
+      <li>If the scalar coherence model cannot be distinguished from placebo effects in blinded trials, the model would lack empirical support.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 10. RESEARCH AGENDA -->
+  <!-- ============================================ -->
+  <section id="agenda">
+    <h2>10. Research Agenda</h2>
+    <p><span class="evidence-tag p1">P1</span> Priority areas for empirical investigation:</p>
+    <ol>
+      <li><strong>Pediatric normative data:</strong> Establish EGG and HRV reference ranges in typically developing children across developmental stages.</li>
+      <li><strong>Intervention pilot studies:</strong> Conduct small-scale RCTs of 0.1 Hz breathing and tVNS in children with sensory and regulatory challenges.</li>
+      <li><strong>Biomarker validation:</strong> Evaluate HRV coherence, EGG frequency, and interoceptive accuracy as potential biomarkers for treatment response.</li>
+      <li><strong>Longitudinal studies:</strong> Track ENS and autonomic function in children receiving occupational therapy to identify predictors of outcome.</li>
+    </ol>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 11. REFERENCES -->
+  <!-- ============================================ -->
+  <section id="references">
+    <h2>11. References</h2>
+    <p style="font-size:0.9rem; color:#486581;">Complete bibliography used in this document.</p>
+    <ol style="font-size:0.9rem; margin-left:1.8rem;">
+      <li>Furness JB. The Enteric Nervous System. Melbourne: Blackwell Publishing; 2006.</li>
+      <li>Gershon MD. 5-Hydroxytryptamine (serotonin) in the gastrointestinal tract. Curr Opin Endocrinol Diabetes Obes. 2013;20(1):14-21.</li>
+      <li>Margolis KG, Li Z, Stevanovic K, et al. Serotonin transporter variant drives ASD-like behavior and ENS abnormalities in mice. J Clin Invest. 2016;126(6):2221-2235.</li>
+      <li>Shaffer F, Ginsberg JP. An overview of heart rate variability metrics and norms. Front Public Health. 2017;5:258.</li>
+      <li>Seguella L, Gulbransen BD. Enteric glial biology, intercellular signalling and roles in gastrointestinal disease. Nat Rev Gastroenterol Hepatol. 2021;18(8):571-587.</li>
+      <li>Wang X, Tang R, Wei Z, et al. The enteric nervous system deficits in autism spectrum disorder. Front Neurosci. 2023;17:1101071.</li>
+      <li>Macachor C. Scalar coherence and autonomic regulation: theoretical foundations. Macachor Scalar Research Technical Report. 2026.</li>
+    </ol>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 12. VERSION HISTORY -->
+  <!-- ============================================ -->
+  <section id="history">
+    <h2>12. Version History</h2>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0</td><td>June 2026</td><td>Initial release (research framework)</td></tr>
+        <tr><td>1.1</td><td>July 2026</td><td>Updated evidence classification; added limitations section</td></tr>
+        <tr><td>1.2</td><td>August 2026</td><td>Restructured for clinical reference; refined hypotheses; corrected scalar notation; added evidence legend</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr>
+
+  <!-- ============================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <footer class="footer">
+    <span><strong>Macachor Scalar Research</strong> · v1.2</span>
+    <span>Macachor Scalar Research</span>
+    <span class="doi">DOI: Not yet assigned</span>
+    <span>Research Framework</span>
+  </footer>
+
+</body>
+</html>

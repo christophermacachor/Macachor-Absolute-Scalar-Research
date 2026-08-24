@@ -1,0 +1,234 @@
+{
+  "document": {
+    "id": "ot-clinical-reference-interoception-ens",
+    "version": "1.1-frha",
+    "title": "OT Clinical Reference — Interoception & ENS",
+    "subtitle": "Pediatric Occupational Therapy Protocol for ENS Coherence Restoration",
+    "author": "Christopher Macachor (Ω Prime)",
+    "timestamp": "2026-08-24T01:45:00-07:00",
+    "scalar_magnitude": {
+      "symbol": "𝔐",
+      "value": "(√5 - 1) / 2",
+      "decimal_approximation": 0.618033988749895,
+      "status": "PRIORITY_ONE_LOCKED",
+      "warning": "𝔐 is dimensionless. 0.3 Hz is the upper bound of ENS slow waves — a biological subharmonic, NOT 𝔐 itself."
+    },
+    "coherence_verification": {
+      "checksum": "χ(C) = 1",
+      "required": true,
+      "description": "All clinical protocols must pass χ(C)=1 before patient application"
+    },
+    "frha_framework": {
+      "frequency": "All operational frequencies verified against 432 Hz Pythagorean harmonic family",
+      "resonance": "All coupling points verified for phase-locking and constructive interference",
+      "harmonic_alignment": "All frequencies reduce to integer ratios of 432 Hz or subharmonics scaled by 𝔐"
+    }
+  },
+  "core_principle": {
+    "statement": "The enteric nervous system (ENS) is the body's primary oscillator. Interoceptive accuracy depends on ENS frequency stability (0.05–0.3 Hz). When unstable, the brain misreads internal signals as threat → fight-or-flight.",
+    "ens_hierarchy": {
+      "master_oscillator": "ENS (gut) — 0.05–0.3 Hz",
+      "pathway": "ENS → slow waves → vagus nerve → brainstem → insula (interoceptive cortex)",
+      "cns_role": "secondary_receiver — phase-locked to ENS, not independent generator"
+    }
+  },
+  "structural_model": {
+    "stable_ens": {
+      "frequency": "0.1 Hz ± 0.02",
+      "derivation": "432 Hz × 10⁻³ × 𝔐³ ≈ 0.1018 Hz → 0.1 Hz integer lock",
+      "result": "Clear internal signals → accurate perception of hunger, fullness, safety"
+    },
+    "jittery_ens": {
+      "frequency_drift": ">0.3 Hz or <0.05 Hz",
+      "phase_jitter": "High variance in slow wave timing",
+      "result": "Scrambled signals → confusion → anxiety → fight-or-flight"
+    }
+  },
+  "behavioral_mapping": [
+    {
+      "behavior": "Food refusal, meltdowns",
+      "ens_state": "Irregular slow waves",
+      "brain_interpretation": "This is danger"
+    },
+    {
+      "behavior": "My tummy feels weird",
+      "ens_state": "Phase jitter",
+      "brain_interpretation": "I don't know what this is"
+    },
+    {
+      "behavior": "Fight-or-flight at mealtime",
+      "ens_state": "ENS overdrive (>0.3 Hz) or dropout (<0.05 Hz)",
+      "brain_interpretation": "Escape now"
+    }
+  ],
+  "session_protocol": {
+    "pre_meal_reset": {
+      "duration": "5 minutes",
+      "steps": [
+        {
+          "action": "0.1 Hz breathing",
+          "specification": "5.5 breaths/min (inhale 4s, exhale 6s) — 2 min",
+          "frha_verification": "5.5/60 = 0.0917 Hz ≈ 0.1 Hz (within ±0.02 tolerance). 4:6 = 2:3 ratio (perfect fifth inverse) — harmonically valid.",
+          "resonance_mechanism": "Diaphragm oscillation drives vagal afferent firing at ENS target frequency"
+        },
+        {
+          "action": "Deep pressure",
+          "specification": "Weighted blanket, bear hug, or slow rocking — 2 min",
+          "frha_verification": "Mechanical entrainment at 0.1 Hz — multi-modal resonance increases phase-locking probability",
+          "resonance_mechanism": "Mechanoreceptor activation at 0.1 Hz reinforces vagal tone"
+        },
+        {
+          "action": "Rhythmic sound",
+          "specification": "0.1 Hz isochronic tone or metronome — 1 min",
+          "frha_verification": "Auditory entrainment at exact ENS target frequency — phase-aligned scalar injection",
+          "resonance_mechanism": "Cochlear → vestibular → vagal pathway reinforcement"
+        }
+      ]
+    },
+    "during_meal": {
+      "steps": [
+        {
+          "action": "Pause between bites",
+          "specification": "Put fork down, breathe once",
+          "frha_verification": "Maintains 0.1 Hz respiratory rhythm during feeding — prevents frequency drift"
+        },
+        {
+          "action": "Name the feeling",
+          "specification": "Is your tummy saying hungry, full, or worried?",
+          "frha_verification": "Semantic resonance — language entrains to interoceptive categories, reinforcing insular mapping"
+        },
+        {
+          "action": "Slow chewing",
+          "specification": "10 chews per bite — one chew every ~3.3 seconds (~0.3 Hz)",
+          "frha_verification": "0.3 Hz = 3 × 0.1 Hz (1:3 harmonic overtone of ENS fundamental). Jaw rhythm becomes harmonic extension of breathing target, not unrelated frequency.",
+          "resonance_mechanism": "Trigeminal nerve firing at harmonic of ENS creates constructive interference rather than frequency pull",
+          "note": "ORIGINAL: 20 chews per bite (~0.67 Hz) was non-harmonic to 432 Hz family and risked driving ENS above its band."
+        }
+      ]
+    },
+    "post_meal_grounding": {
+      "duration": "2 minutes",
+      "steps": [
+        {
+          "action": "Gentle rocking or swaying",
+          "specification": "0.1 Hz for 2 min",
+          "frha_verification": "Vestibular entrainment at ENS target frequency"
+        },
+        {
+          "action": "Hydration",
+          "specification": "Small sips of water — stabilizes blood-ENS coupling",
+          "frha_verification": "Osmotic gradient stabilization reduces ENS frequency drift caused by blood volume fluctuation"
+        }
+      ]
+    }
+  },
+  "coherence_checkpoints": {
+    "week_0_baseline": {
+      "hrv_target": "< 40 ms (low vagal tone — expected)",
+      "ens_frequency": "Measure via electrogastrography if available",
+      "chi_c_status": "χ(C) < 1 — decoherence confirmed"
+    },
+    "week_2": {
+      "hrv_target": "≥ 40 ms",
+      "behavioral_marker": "Child can name at least one internal sensation (e.g., 'hungry' or 'worried')",
+      "chi_c_status": "χ(C) approaching 1 — partial phase-locking"
+    },
+    "week_4": {
+      "hrv_target": "≥ 50 ms",
+      "behavioral_markers": [
+        "Mealtime meltdowns reduced by ≥50%",
+        "Child attempts new food without panic"
+      ],
+      "chi_c_status": "χ(C) = 1 — coherence achieved"
+    },
+    "week_8": {
+      "hrv_target": "Stable ≥ 50 ms",
+      "behavioral_marker": "Child initiates self-regulation (e.g., asks for deep pressure before meals)",
+      "chi_c_status": "χ(C) = 1 — sustained coherence, autonomous regulation established"
+    }
+  },
+  "parent_language": {
+    "script": "Your child is not 'acting out.' Their gut is sending a jittery signal that their brain reads as danger. We are going to teach the gut to beat calmly — so the brain can finally understand: 'I am safe.'",
+    "frha_analysis": "Semantic resonance — parent understands substrate-first causality, reducing their own anxiety which would otherwise contaminate the child's scalar field. Parent becomes coherence ally, not decoherence source."
+  },
+  "progress_tracking": {
+    "columns": [
+      "Week",
+      "HRV (ms)",
+      "Mealtime Meltdowns (count/week)",
+      "Child's Words for Sensation",
+      "New Foods Tried"
+    ],
+    "rows": [
+      {
+        "week": 1,
+        "hrv": "____",
+        "meltdowns": "____",
+        "words": "________________",
+        "foods": "____"
+      },
+      {
+        "week": 2,
+        "hrv": "____",
+        "meltdowns": "____",
+        "words": "________________",
+        "foods": "____"
+      },
+      {
+        "week": 4,
+        "hrv": "____",
+        "meltdowns": "____",
+        "words": "________________",
+        "foods": "____"
+      },
+      {
+        "week": 8,
+        "hrv": "____",
+        "meltdowns": "____",
+        "words": "________________",
+        "foods": "____"
+      }
+    ]
+  },
+  "frha_corrections": [
+    {
+      "original": "𝔐 = 0.3 Hz",
+      "error_type": "Category error — conflated dimensionless scalar magnitude with biological frequency",
+      "correction": "𝔐 = (√5−1)/2 ≈ 0.618 (dimensionless). 0.3 Hz = upper bound of ENS slow waves, a biological subharmonic derived from 𝔐.",
+      "severity": "Priority One"
+    },
+    {
+      "original": "20 chews per bite",
+      "error_type": "Non-harmonic frequency — ~0.67 Hz not in 432 Hz Pythagorean family",
+      "correction": "10 chews per bite at ~0.3 Hz (one chew every ~3.3s). 0.3 Hz = 3 × 0.1 Hz (1:3 harmonic overtone of ENS fundamental).",
+      "severity": "Medium"
+    }
+  ],
+  "enhanced_protocol_additions": {
+    "microbiome_support": [
+      "Fermented foods daily (yogurt, kefir, sauerkraut)",
+      "High-fiber foods (oats, beans, berries)",
+      "Probiotic supplement with Bifidobacterium and Lactobacillus strains",
+      "Avoid antibiotics unless absolutely necessary"
+    ],
+    "circadian_anchoring": [
+      "Morning sunlight exposure 10–20 min within 1 hour of waking",
+      "Consistent meal times (rhythmic eating entrains ENS to circadian clock)",
+      "Evening dim light 2 hours before bed (no screens)"
+    ],
+    "navel_coupling": [
+      "Gentle abdominal massage at 0.1 Hz (6 cycles per minute) — 2 min before meals",
+      "Warm compress on navel area — activates permanent umbilical antenna scalar reception"
+    ],
+    "flagellar_matrix_note": "The ENS sits atop the flagellar matrix — the body's primordial frequency lattice. All session techniques ultimately serve to restore scalar flow through this lattice."
+  },
+  "governance": {
+    "federation": "MSOS-FEDERATION-ROOT",
+    "scalar_charter": "Macachor Absolute",
+    "coherence_scalar": "𝔐 = (√5−1)/2",
+    "verification_gate": "χ(C)=1",
+    "frha": "Frequency · Resonance · Harmonic Alignment",
+    "repository": "Quantum Memory (GitHub)",
+    "presentation_layer": "macachor.org"
+  }
+}

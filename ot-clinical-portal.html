@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OT Clinical Reference — Interoception & ENS</title>
+<meta name="description" content="FRHA-corrected pediatric occupational therapy protocol for ENS coherence restoration. Interoception, scalar frequency, and harmonic alignment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c8a04e;
+    --gold-dim: #a0803a;
+    --gold-bright: #e8c86e;
+    --bg-deep: #0a0a0c;
+    --bg-surface: #121216;
+    --bg-elevated: #1a1a20;
+    --text-primary: #e8e4dc;
+    --text-secondary: #a09888;
+    --text-muted: #686058;
+    --border-subtle: #2a2a30;
+    --border-gold: #c8a04e40;
+    --accent-green: #4ec88a;
+    --accent-red: #c84e4e;
+    --scalar-glow: 0 0 40px rgba(200,160,78,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--gold); color: var(--bg-deep); }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10,10,12,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-gold);
+    padding: 0 2rem;
+  }
+  .nav-inner {
+    max-width: 1400px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--text-muted); font-weight: 400; }
+  .nav-links {
+    display: flex; gap: 0.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold-dim);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--gold-bright);
+    border-color: var(--gold);
+    background: rgba(200,160,78,0.08);
+    text-shadow: 0 0 12px var(--gold);
+  }
+
+  .hero {
+    min-height: 60vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    background: radial-gradient(ellipse at 50% 0%, rgba(200,160,78,0.06) 0%, transparent 60%);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: 'Cinzel', serif; font-size: 0.7rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 0.4rem 1.2rem; border-radius: 100px;
+    margin-bottom: 2rem;
+    background: rgba(200,160,78,0.06);
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    max-width: 800px;
+    text-shadow: 0 0 60px rgba(200,160,78,0.15);
+    margin-bottom: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem; font-weight: 300;
+    color: var(--text-secondary);
+    max-width: 600px;
+  }
+
+  section {
+    max-width: 900px; margin: 0 auto;
+    padding: 3rem 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex; align-items: baseline; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-number {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem; font-weight: 700;
+    color: var(--gold); opacity: 0.25;
+    line-height: 1;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--gold);
+  }
+
+  .frha-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .frha-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .frha-card h4 {
+    font-family: 'Cinzel', serif; font-size: 0.8rem;
+    color: var(--gold); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .frha-card p {
+    font-size: 0.85rem; color: var(--text-muted);
+  }
+
+  .correction-banner {
+    background: rgba(200,78,78,0.08);
+    border: 1px solid rgba(200,78,78,0.3);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .correction-banner h4 {
+    font-family: 'Cinzel', serif; font-size: 0.8rem;
+    color: var(--accent-red); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.8rem;
+  }
+  .correction-banner p {
+    font-size: 0.9rem; color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+  }
+  .correction-banner code {
+    background: var(--bg-elevated); color: var(--accent-red);
+    padding: 0.15rem 0.4rem; border-radius: 4px;
+    font-family: 'SF Mono', monospace; font-size: 0.85rem;
+  }
+
+  .protocol-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .protocol-card h3 {
+    font-family: 'Cinzel', serif; font-size: 1rem;
+    color: var(--gold-bright); margin-bottom: 0.8rem;
+  }
+  .protocol-card ul {
+    margin: 0; padding-left: 1.2rem;
+    font-size: 0.9rem; color: var(--text-secondary);
+  }
+  .protocol-card li { margin-bottom: 0.6rem; }
+  .freq-note {
+    font-size: 0.75rem; color: var(--text-muted);
+    font-style: italic; margin-top: 0.2rem;
+    display: block;
+  }
+
+  .data-table {
+    width: 100%; border-collapse: collapse;
+    margin: 1.5rem 0; font-size: 0.88rem;
+  }
+  .data-table th {
+    font-family: 'Cinzel', serif; font-weight: 600;
+    color: var(--gold); text-align: left;
+    padding: 0.8rem; border-bottom: 2px solid var(--gold);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+  .data-table td {
+    padding: 0.8rem; border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    vertical-align: top;
+  }
+  .data-table tr:hover td { background: rgba(200,160,78,0.04); }
+
+  .checkpoint-box {
+    background: rgba(200,160,78,0.06);
+    border: 1px solid var(--border-gold);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .checkpoint-box h4 {
+    font-family: 'Cinzel', serif; font-size: 0.8rem;
+    color: var(--gold); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.8rem;
+  }
+  .checkpoint-box p {
+    font-size: 0.9rem; color: var(--text-secondary);
+    margin-bottom: 0.6rem;
+  }
+
+  .insight-box {
+    background: rgba(200,160,78,0.08);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .insight-box p {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; color: var(--gold-bright);
+    line-height: 1.6;
+  }
+  .insight-box .note {
+    font-size: 0.8rem; color: var(--text-muted);
+    font-style: italic; margin-top: 0.5rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .enhanced-box {
+    background: rgba(78,200,138,0.05);
+    border: 1px solid rgba(78,200,138,0.2);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .enhanced-box h4 {
+    font-family: 'Cinzel', serif; font-size: 0.8rem;
+    color: var(--accent-green); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.8rem;
+  }
+  .enhanced-box ul {
+    margin: 0; padding-left: 1.2rem;
+    font-size: 0.9rem; color: var(--text-secondary);
+  }
+
+  .governance {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-gold);
+    padding: 3rem 2rem; text-align: center;
+  }
+  .governance-inner { max-width: 700px; margin: 0 auto; }
+  .governance h3 {
+    font-family: 'Cinzel', serif; font-size: 0.9rem;
+    color: var(--gold); letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .governance-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; text-align: left;
+  }
+  .gov-item {
+    font-size: 0.8rem; color: var(--text-muted);
+    padding: 0.8rem; background: var(--bg-elevated);
+    border-radius: 8px; border: 1px solid var(--border-subtle);
+  }
+  .gov-item strong {
+    display: block; color: var(--gold-dim);
+    font-family: 'Cinzel', serif; font-size: 0.7rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .frha-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">◉ <span>MACACHOR</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">📜 Aperture</a></li>
+      <li><a href="federation-root-unified.html">⚡ Federation</a></li>
+      <li><a href="observatory.html">◉ Observatory</a></li>
+      <li><a href="sfr-protocol.html">∿ SFR-1.0</a></li>
+      <li><a href="resonance-blueprints.html">◈ Blueprints</a></li>
+      <li><a href="three-layer-diagnostic.html">◊ Diagnostic</a></li>
+      <li><a href="ot-clinical-portal.html" class="active">◉ OT Clinical</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" style="border-bottom:none;">
+  <div class="hero-badge">FRHA v1.1 · Frequency · Resonance · Harmonic Alignment</div>
+  <h1>Interoception &amp; the ENS</h1>
+  <p class="hero-subtitle">Clinical Reference for Pediatric Occupational Therapists — Scalar-Locked Portal Edition</p>
+</section>
+
+<section>
+  <div class="frha-strip">
+    <div class="frha-card">
+      <h4>Frequency</h4>
+      <p>All operational frequencies verified against 432 Hz Pythagorean harmonic family via 𝔐 scaling</p>
+    </div>
+    <div class="frha-card">
+      <h4>Resonance</h4>
+      <p>All coupling points verified for phase-locking and constructive interference</p>
+    </div>
+    <div class="frha-card">
+      <h4>Harmonic Alignment</h4>
+      <p>All frequencies reduce to integer ratios of 432 Hz or subharmonics scaled by 𝔐</p>
+    </div>
+  </div>
+
+  <div class="correction-banner">
+    <h4>⚠ Critical Correction (v1.1)</h4>
+    <p><strong>Previous error:</strong> <code>scalar magnitude 𝔐 = 0.3 Hz</code></p>
+    <p><strong>Correction:</strong> <code>𝔐 = (√5−1)/2 ≈ 0.618</code> is a <strong>dimensionless scalar magnitude</strong>. <code>0.3 Hz</code> is the upper bound of ENS slow waves — a biological subharmonic derived from 𝔐, not 𝔐 itself.</p>
+    <p><strong>Impact:</strong> All frequencies in this document now correctly derive from the 432 Hz Pythagorean family.</p>
+  </div>
+
+  <div class="protocol-card">
+    <h3>Core Principle</h3>
+    <p style="color:var(--text-secondary); font-size:0.9rem; line-height:1.8;">
+      The enteric nervous system (ENS) is the body's primary oscillator. Interoceptive accuracy depends on ENS frequency stability (0.05–0.3 Hz). When unstable, the brain misreads internal signals as threat → fight-or-flight.
+    </p>
+    <p style="color:var(--text-muted); font-size:0.8rem; margin-top:0.5rem; font-style:italic;">
+      Flagellar Matrix Note: The ENS sits atop the flagellar matrix — the body's primordial frequency lattice. All session techniques ultimately serve to restore scalar flow through this lattice.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title">The Structural Model</h2>
+  </div>
+  <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:1rem;">
+    <strong style="color:var(--text-primary);">ENS (gut)</strong> → <strong style="color:var(--gold);">slow waves (0.05–0.3 Hz)</strong> → <strong style="color:var(--text-primary);">vagus nerve</strong> → <strong style="color:var(--text-primary);">brainstem</strong> → <strong style="color:var(--text-primary);">insula (interoceptive cortex)</strong>
+  </p>
+  <ul style="color:var(--text-secondary); font-size:0.9rem; padding-left:1.2rem; line-height:1.8;">
+    <li><strong style="color:var(--gold);">Stable ENS (0.1 Hz ± 0.02):</strong> Clear internal signals → accurate perception of hunger, fullness, safety.</li>
+    <li><strong style="color:var(--accent-red);">Jittery ENS (frequency drift, phase jitter):</strong> Scrambled signals → confusion → anxiety → fight-or-flight.</li>
+  </ul>
+  <p style="color:var(--text-muted); font-size:0.8rem; font-style:italic; margin-top:0.8rem;">
+    0.1 Hz = 432 Hz × 10⁻³ × 𝔐³ ≈ 0.1018 Hz → integer-locked to 0.1 Hz
+  </p>
+</section>
+
+<section>
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title">What You See in the Child</h2>
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>Behavior</th><th>ENS State</th><th>Brain Interpretation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Food refusal, meltdowns</td><td>Irregular slow waves</td><td>"This is danger"</td></tr>
+      <tr><td>"My tummy feels weird"</td><td>Phase jitter</td><td>"I don't know what this is"</td></tr>
+      <tr><td>Fight-or-flight at mealtime</td><td>ENS overdrive (&gt;0.3 Hz) or dropout (&lt;0.05 Hz)</td><td>"Escape now"</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Session-by-Session Protocol</h2>
+  </div>
+
+  <div class="protocol-card">
+    <h3>Pre-Meal Reset (5 minutes)</h3>
+    <ul>
+      <li><strong style="color:var(--gold);">0.1 Hz breathing:</strong> 5.5 breaths/min (inhale 4s, exhale 6s) — 2 min
+        <span class="freq-note">FRHA: Diaphragm oscillation drives vagal afferent firing at ENS target frequency. 4:6 = 2:3 (perfect fifth inverse).</span>
+      </li>
+      <li><strong style="color:var(--gold);">Deep pressure:</strong> Weighted blanket, bear hug, or slow rocking — 2 min
+        <span class="freq-note">FRHA: Mechanical entrainment at 0.1 Hz — multi-modal resonance increases phase-locking.</span>
+      </li>
+      <li><strong style="color:var(--gold);">Rhythmic sound:</strong> 0.1 Hz isochronic tone or metronome — 1 min
+        <span class="freq-note">FRHA: Auditory entrainment at exact ENS target frequency — phase-aligned scalar injection.</span>
+      </li>
+      <li><strong style="color:var(--gold);">Abdominal massage:</strong> Gentle circular massage at 0.1 Hz (6 cycles/min) — 1 min
+        <span class="freq-note">FRHA: Activates permanent umbilical antenna — direct scalar injection into flagellar matrix.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="protocol-card">
+    <h3>During Meal</h3>
+    <ul>
+      <li><strong style="color:var(--gold);">Pause between bites:</strong> Put fork down, breathe once
+        <span class="freq-note">FRHA: Maintains 0.1 Hz respiratory rhythm — prevents frequency drift.</span>
+      </li>
+      <li><strong style="color:var(--gold);">Name the feeling:</strong> "Is your tummy saying hungry, full, or worried?"
+        <span class="freq-note">FRHA: Semantic resonance — language entrains to interoceptive categories.</span>
+      </li>
+      <li><strong style="color:var(--gold);">Slow chewing:</strong> 10 chews per bite — one chew every ~3.3 seconds (~0.3 Hz)
+        <span class="freq-note">FRHA: 0.3 Hz = 3 × 0.1 Hz (1:3 harmonic overtone). CORRECTION from v1.0: 20 chews (~0.67 Hz) was non-harmonic.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="protocol-card">
+    <h3>Post-Meal Grounding</h3>
+    <ul>
+      <li><strong style="color:var(--gold);">Gentle rocking or swaying</strong> — 0.1 Hz for 2 min
+        <span class="freq-note">FRHA: Vestibular entrainment at ENS target frequency.</span>
+      </li>
+      <li><strong style="color:var(--gold);">Hydration:</strong> Small sips of water — stabilizes blood-ENS coupling
+        <span class="freq-note">FRHA: Osmotic gradient stabilization reduces ENS frequency drift.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="enhanced-box">
+    <h4>✚ Enhanced Protocol Additions (v1.1)</h4>
+    <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:0.5rem;"><strong>Microbiome Support (daily):</strong></p>
+    <ul>
+      <li>Fermented foods (yogurt, kefir, sauerkraut)</li>
+      <li>High-fiber foods (oats, beans, berries)</li>
+      <li>Probiotic with <em>Bifidobacterium</em> and <em>Lactobacillus</em></li>
+      <li>Avoid antibiotics unless absolutely necessary</li>
+    </ul>
+    <p style="color:var(--text-secondary); font-size:0.9rem; margin:0.8rem 0 0.5rem;"><strong>Circadian Anchoring:</strong></p>
+    <ul>
+      <li>Morning sunlight 10–20 min within 1 hour of waking</li>
+      <li>Consistent meal times (rhythmic eating entrains ENS to circadian clock)</li>
+      <li>Evening dim light 2 hours before bed (no screens)</li>
+    </ul>
+    <p style="color:var(--text-secondary); font-size:0.9rem; margin:0.8rem 0 0.5rem;"><strong>Navel Coupling:</strong></p>
+    <ul>
+      <li>Warm compress on navel area — activates permanent umbilical antenna</li>
+      <li>Gentle abdominal massage at 0.1 Hz before meals</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Coherence Checkpoints (χ(C)=1)</h2>
+  </div>
+  <div class="checkpoint-box">
+    <p><strong style="color:var(--accent-red);">Week 0 (Baseline):</strong> Child's HRV &lt; 40 ms (low vagal tone — expected). Measure ENS frequency via electrogastrography if available. χ(C) &lt; 1 — decoherence confirmed.</p>
+    <p><strong style="color:var(--gold-dim);">Week 2:</strong> HRV ≥ 40 ms, child can name at least one internal sensation. χ(C) approaching 1 — partial phase-locking.</p>
+    <p><strong style="color:var(--gold);">Week 4:</strong> HRV ≥ 50 ms, mealtime meltdowns reduced by ≥50%, child attempts new food without panic. χ(C) = 1 — coherence achieved.</p>
+    <p><strong style="color:var(--accent-green);">Week 8:</strong> HRV stable ≥ 50 ms, child initiates self-regulation. χ(C) = 1 — sustained coherence, autonomous regulation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Language to Use with Parents</h2>
+  </div>
+  <div class="insight-box">
+    <p>"Your child is not 'acting out.' Their gut is sending a jittery signal that their brain reads as danger. We are going to teach the gut to beat calmly — so the brain can finally understand: <em>'I am safe.'</em>"</p>
+    <p class="note">FRHA: Semantic resonance — parent understands substrate-first causality, reducing their own anxiety which would otherwise contaminate the child's scalar field. Parent becomes coherence ally, not decoherence source.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2 class="section-title">Progress Tracking</h2>
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>Week</th><th>HRV (ms)</th><th>Meltdowns/week</th><th>Child's Words</th><th>New Foods</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
+      <tr><td>2</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
+      <tr><td>4</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
+      <tr><td>8</td><td>____</td><td>____</td><td>________________</td><td>____</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <h2 class="section-title">FRHA Verification Summary</h2>
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>Element</th><th>Frequency</th><th>Harmonic Ratio</th><th>Resonance Mechanism</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Breathing</td><td>0.1 Hz</td><td>432 × 10⁻³ × 𝔐³</td><td>Diaphragm → vagal afferent</td><td style="color:var(--accent-green);">✅ LOCKED</td></tr>
+      <tr><td>Deep pressure</td><td>0.1 Hz</td><td>Mechanical 0.1 Hz</td><td>Mechanoreceptor → vagal tone</td><td style="color:var(--accent-green);">✅ LOCKED</td></tr>
+      <tr><td>Isochronic tone</td><td>0.1 Hz</td><td>Auditory 0.1 Hz</td><td>Cochlear → vestibular → vagus</td><td style="color:var(--accent-green);">✅ LOCKED</td></tr>
+      <tr><td>Chewing (v1.1)</td><td>~0.3 Hz</td><td>3 × 0.1 Hz (1:3 overtone)</td><td>Trigeminal → ENS harmonic</td><td style="color:var(--accent-green);">✅ LOCKED</td></tr>
+      <tr><td>Rocking</td><td>0.1 Hz</td><td>Vestibular 0.1 Hz</td><td>Semicircular canals → brainstem</td><td style="color:var(--accent-green);">✅ LOCKED</td></tr>
+      <tr><td>Abdominal massage</td><td>0.1 Hz</td><td>Tactile 0.1 Hz</td><td>Navel antenna → flagellar matrix</td><td style="color:var(--accent-green);">✅ LOCKED</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="governance">
+  <div class="governance-inner">
+    <h3>Governance & Provenance</h3>
+    <div class="governance-grid">
+      <div class="gov-item"><strong>Federation</strong>MSOS-FEDERATION-ROOT</div>
+      <div class="gov-item"><strong>Scalar Charter</strong>Macachor Absolute</div>
+      <div class="gov-item"><strong>Coherence Scalar</strong>𝔐 = (√5−1)/2</div>
+      <div class="gov-item"><strong>Verification Gate</strong>χ(C) = 1</div>
+      <div class="gov-item"><strong>Framework</strong>FRHA v1.1</div>
+      <div class="gov-item"><strong>Presentation</strong>macachor.org</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

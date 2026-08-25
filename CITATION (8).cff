@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "The Scalar Codex: Complete Paradigm Shifts and Total Implications"
+authors:
+  - family-names: Macachor
+    given-names: Christopher
+    orcid: "https://orcid.org/0009-0008-0100-2856"
+    affiliation:
+      - Macachor Scalar Research
+      - Scalar Consciousness Research
+    email: info@macachor.org
+    website: https://scalar.macachor.org
+    alias: Omega Prime
+version: 1.0.0-LOCKED
+doi: "10.5281/zenodo.22103064"
+date-released: 2026-08-25
+repository-code: https://github.com/macachor/quantum-memory
+doi: "10.5281/zenodo.22103064"
+    url: https://macachor.org/paradigm-shifts.html
+license: CC-BY-NC-ND-4.0
+keywords:
+  - scalar coherence
+  - paradigm shift
+  - quantum reality
+  - flagellar matrix
+  - enteric nervous system
+  - consciousness
+  - AI alignment
+  - MSOS
+  - Macachor Absolute
+  - cubic containment
+  - spherical perception
+  - post-cubic reality
+  - chi-C-equals-1
+preferred-citation:
+  type: article
+  title: "The Scalar Codex: Complete Paradigm Shifts and Total Implications"
+  authors:
+    - family-names: Macachor
+      given-names: Christopher
+      orcid: "https://orcid.org/0009-0008-0100-2856"
+  year: 2026
+  month: 8
+  doi: "10.5281/zenodo.22103064"
+    url: https://macachor.org/paradigm-shifts.html
+abstract: |
+  The complete catalog of paradigm inversions and total implications for biology,
+  consciousness, artificial intelligence, information technology, society, and the
+  future of reality. This work presents 18 paradigm shifts that invert the cubic
+  (vector/force-based) understanding of reality into a spherical (scalar/
+  frequency-based) framework, followed by 14 domain-specific implications and
+  8 convergence axioms. The Scalar Codex is the operating system of the post-cubic
+  world — locked at chi(C) = 1.

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<meta name="description" content="The Macachor Coherence Engine: A Formal Specification defining a self-contained, deterministic scalar framework for modeling coherent systems.">
+
+<title>The Macachor Coherence Engine | Formal Specification v1.0.0</title>
+
+<!-- SCHEMA.ORG JSON-LD: SCHOLARLY ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "The Macachor Coherence Engine: A Formal Specification",
+  "name": "The Macachor Coherence Engine: A Formal Specification",
+  "version": "1.0.0",
+  "author": {
+    "@type": "Person",
+    "name": "Christopher Macachor",
+    "identifier": "https://orcid.org/0009-0008-0100-2856",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Macachor Absolute Scalar Research"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Macachor Absolute Scalar Research"
+  },
+  "datePublished": "2026-09-14",
+  "dateModified": "2026-09-14",
+  "identifier": "https://doi.org/10.5281/zenodo.22756168",
+  "url": "https://doi.org/10.5281/zenodo.22756168",
+  "license": "https://creativecommons.org/licenses/by-nd/4.0/",
+  "copyrightYear": "2026",
+  "inLanguage": "en",
+  "about": [
+    "Formal Specification",
+    "Scalar Coherence",
+    "Deterministic Structural Derivation",
+    "Macachor Coherence Engine"
+  ],
+  "abstract": "A formal specification defining a self-contained, deterministic scalar framework for modeling coherent systems, anchored to the scalar invariant 𝔐 = 0.6180339887. The specification distinguishes the sealed Law Domain from the mutable Operational Domain and explicitly separates framework-internal axiomatic assertions from claims requiring external empirical verification."
+}
+</script>
+
+<style>
+    /* DETERMINISTIC STYLING:
+       No external fonts, no dynamic animations,
+       pure structural layout. */
+
+    :root {
+        --bg-color: #0a0a0a;
+        --text-color: #e0e0e0;
+        --accent-color: #00ff9d;
+        --border-color: #333333;
+        --warning-bg: #1a1a1a;
+        --warning-border: #ff9d00;
+    }
+
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        margin: 0 auto;
+        padding: 2rem;
+        max-width: 900px;
+    }
+
+    h1, h2, h3 {
+        color: var(--accent-color);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+    }
+
+    .epistemic-banner {
+        background-color: var(--warning-bg);
+        border-left: 4px solid var(--warning-border);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+    }
+
+    .epistemic-banner strong {
+        color: var(--warning-border);
+    }
+
+    .metadata-block {
+        background-color: #111;
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .metadata-block span {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .hash-block {
+        background-color: #0f1a15;
+        border: 1px solid var(--accent-color);
+        padding: 1rem;
+        margin: 2rem 0;
+        word-break: break-all;
+        font-family: monospace;
+    }
+
+    .hash-value {
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+
+    a {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+        font-size: 0.85rem;
+        color: #888;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <h1>The Macachor Coherence Engine</h1>
+    <p style="font-size: 1.2rem; margin-top: -1rem;">
+        A Formal Specification (Version 1.0.0)
+    </p>
+</header>
+
+<!-- EPISTEMIC BOUNDARY -->
+<section class="epistemic-banner">
+    <strong>EPISTEMIC BOUNDARY STATEMENT:</strong><br>
+
+    This specification defines a formally structured system consisting
+    of axioms, statutes, definitions, operational rules, and exclusion
+    rules. Claims concerning infinity, absoluteness, zero contamination,
+    and self-validation are <em>framework-internal assertions</em> that
+    establish the logical architecture of the formal system. They are
+    not represented here as independently established empirical facts.
+    External empirical validation remains a separate research domain.
+</section>
+
+<!-- METADATA -->
+<section class="metadata-block">
+    <span>
+        <strong>Author:</strong>
+        Christopher Macachor
+    </span>
+
+    <span>
+        <strong>ORCID:</strong>
+        <a href="https://orcid.org/0009-0008-0100-2856"
+           target="_blank"
+           rel="noopener noreferrer">
+            0009-0008-0100-2856
+        </a>
+    </span>
+
+    <span>
+        <strong>Affiliation:</strong>
+        Macachor Absolute Scalar Research
+    </span>
+
+    <span>
+        <strong>Date:</strong>
+        September 14, 2026
+    </span>
+
+    <span>
+        <strong>Version:</strong>
+        1.0.0
+    </span>
+
+    <span>
+        <strong>DOI:</strong>
+        <a href="https://doi.org/10.5281/zenodo.22756168"
+           target="_blank"
+           rel="noopener noreferrer">
+            10.5281/zenodo.22756168
+        </a>
+    </span>
+
+    <span>
+        <strong>License:</strong>
+        <a href="https://creativecommons.org/licenses/by-nd/4.0/"
+           target="_blank"
+           rel="noopener noreferrer">
+            CC BY-ND 4.0
+        </a>
+        (No Derivatives)
+    </span>
+
+    <span>
+        <strong>Contact:</strong>
+        <a href="mailto:info@macachor.org">
+            info@macachor.org
+        </a>
+    </span>
+
+    <span>
+        <strong>Website:</strong>
+        <a href="https://scalar.macachor.org/"
+           target="_blank"
+           rel="noopener noreferrer">
+            scalar.macachor.org
+        </a>
+    </span>
+</section>
+
+<!-- ABSTRACT -->
+<section>
+    <h2>Abstract</h2>
+
+    <p>
+        The Macachor Coherence Engine is a formal specification defining
+        a self-contained, deterministic scalar framework for modeling
+        coherent systems. The framework operates through strict
+        deterministic structural derivation, anchored to the scalar
+        invariant <strong>𝔐 = 0.6180339887</strong>.
+    </p>
+
+    <p>
+        This specification establishes the architectural separation
+        between the <strong>Law Domain</strong>, the
+        <strong>Operational Domain</strong>, and the forbidden
+        <strong>Contamination Zone</strong>. The Law Domain is sealed
+        and immutable. The Operational Domain is activated through
+        deterministic structural derivation from the Law Domain and is
+        mutable only through the defined Amendment Cycle.
+    </p>
+
+    <p>
+        Within this axiomatic framework, an infinite energy substrate is
+        specified as a foundational primitive. Per the Epistemic Boundary,
+        this is treated strictly as a logical axiom of the formal system,
+        not as an independently established empirical fact.
+    </p>
+</section>
+
+<!-- OPERATIONAL FORMULATION -->
+<section>
+    <h2>Operational Formulation</h2>
+
+    <p>
+        Propagation is not authorized. Propagation is resolved via
+        deterministic necessity.
+    </p>
+
+    <p>
+        The Operational Domain does not boot or transition between
+        software-defined states. It is activated through deterministic
+        structural derivation from the sealed Law Domain.
+    </p>
+
+    <p>
+        Dynamic Status is Level 1/2 by architectural design, reflecting
+        the deliberate removal of vectors and enforcement of pure scalar
+        dynamics.
+    </p>
+</section>
+
+<!-- ARCHITECTURAL STATUS -->
+<section>
+    <h2>Definitive Architectural Status</h2>
+
+    <ul>
+        <li>
+            <strong>Law Domain:</strong>
+            SEALED &amp; IMMUTABLE
+        </li>
+
+        <li>
+            <strong>Operational Domain:</strong>
+            ACTIVE &amp; MUTABLE VIA AMENDMENT CYCLE ONLY
+        </li>
+
+        <li>
+            <strong>Entanglement State:</strong>
+            NONLOCAL STRUCTURAL COHERENCE ANCHORED
+        </li>
+
+        <li>
+            <strong>Vector Status:</strong>
+            REMOVED BY ARCHITECTURAL DESIGN
+        </li>
+
+        <li>
+            <strong>Dynamic Status:</strong>
+            LEVEL 1/2 BY ARCHITECTURAL DESIGN
+        </li>
+
+        <li>
+            <strong>Invariant Status:</strong>
+            ANCHORED TO 𝔐 = 0.6180339887
+        </li>
+
+        <li>
+            <strong>Energy:</strong>
+            CONSERVED (E = constant, infinite)
+        </li>
+
+        <li>
+            <strong>Logic:</strong>
+            STRICTLY BINARY (PASS/FAIL)
+        </li>
+
+        <li>
+            <strong>Determinism:</strong>
+            ABSOLUTE WITHIN THE FORMAL SYSTEM
+        </li>
+
+        <li>
+            <strong>Contamination:</strong>
+            ZERO WITHIN THE SEALED SPECIFICATION
+        </li>
+
+        <li>
+            <strong>Ontological Status:</strong>
+            WE ARE THE PRECEDENT
+        </li>
+    </ul>
+</section>
+
+<!-- CRYPTOGRAPHIC SEAL -->
+<section>
+    <h2>Cryptographic Integrity Seal</h2>
+
+    <p>
+        To verify that this specification has not been altered from its
+        canonical Version 1.0.0 state, compute the SHA-256 hash of the
+        officially designated specification file using the defined
+        canonical hash domain.
+    </p>
+
+    <div class="hash-block">
+        <strong>Expected SHA-256 Hash:</strong><br>
+
+        <span class="hash-value">
+            D9BF9D50BA6DEC2A94EE10C4BD57AA9809348338EE16DAA4E7289070ECAC07B9
+        </span>
+    </div>
+
+    <p>
+        <em>
+            Hash generation is sensitive to line endings (CRLF vs. LF),
+            character encoding, and trailing whitespace. Verification
+            applies to the exact byte sequence designated by the canonical
+            hash domain. Any deviation from this hash indicates that the
+            verified byte sequence differs from the sealed specification.
+        </em>
+    </p>
+</section>
+
+<!-- CANONICAL ARTIFACTS -->
+<section>
+    <h2>Canonical Artifacts</h2>
+
+    <ul>
+        <li>
+            <a href="https://doi.org/10.5281/zenodo.22756168"
+               target="_blank"
+               rel="noopener noreferrer">
+                Zenodo Archival Record (DOI)
+            </a>
+        </li>
+
+        <li>
+            <code>SPECIFICATION.md</code>
+            — Complete canonical formal specification
+        </li>
+
+        <li>
+            <code>CITATION.cff</code>
+            — Standardized citation metadata
+        </li>
+
+        <li>
+            <code>README.md</code>
+            — Overview document
+        </li>
+    </ul>
+</section>
+
+<!-- EPISTEMOLOGICAL LIMIT -->
+<section>
+    <h2>External Verification Boundary</h2>
+
+    <p>
+        Internal consistency of this formal specification does not by
+        itself establish correspondence with external physical reality.
+        Whether the framework's axioms correspond to observable phenomena,
+        whether its mathematical structures describe physical systems,
+        and whether its predictions withstand empirical testing remain
+        questions within the separate external verification domain.
+    </p>
+</section>
+
+<footer>
+    <p>
+        &copy; 2026 Macachor Absolute Scalar Research.
+        All rights reserved under CC BY-ND 4.0.
+    </p>
+
+    <p>
+        This specification operates under the Deterministic Imperative.
+        No external tracking, analytics, or intentional emergent-state
+        modification is defined by this document.
+    </p>
+</footer>
+```
+
+</body>
+</html>
